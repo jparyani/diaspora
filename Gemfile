@@ -148,6 +148,7 @@ gem 'rails-timeago',           '2.11.0'
 # https://github.com/rubyzip/rubyzip#important-note
 gem 'zip-zip'
 
+gem 'therubyracer', '0.12.1'
 
 # Windows and OSX have an execjs compatible runtime built-in, Linux users should
 # install Node.js or use 'therubyracer'.
