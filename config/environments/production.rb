@@ -9,7 +9,7 @@ Diaspora::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
@@ -19,6 +19,11 @@ Diaspora::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  config.assets.configure do |env|
+    env.cache = ActiveSupport::Cache::FileStore.new("read-only-cache/assets")
+    # the default is tmp/cache/assets
+  end
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
